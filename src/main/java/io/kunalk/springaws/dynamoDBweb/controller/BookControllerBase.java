@@ -9,6 +9,8 @@
 package io.kunalk.springaws.dynamoDBweb.controller;
 
 
+import io.kunalk.springaws.dynamoDBweb.service.BookTableService;
+
 /**
  * <h4>
  * BookControllerBase

@@ -8,6 +8,8 @@
  */
 package io.kunalk.springaws.dynamoDBweb.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

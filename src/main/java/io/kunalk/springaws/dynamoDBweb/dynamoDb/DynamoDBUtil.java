@@ -8,6 +8,8 @@
  */
 package io.kunalk.springaws.dynamoDBweb.dynamoDb;
 
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
@@ -68,7 +70,7 @@ public class DynamoDBUtil {
      * @param dynamoDBAttributes the DynamoDB attribute map for that DynamoDB row
      * @throws ReflectiveOperationException 
      */
-    public static void attributesToObject(Object obj, Map<String, AttributeValue> dynamoDBAttributes) 
+    public static void attributesToObject(Object obj, Map<String, AttributeValue> dynamoDBAttributes)
             throws ReflectiveOperationException {
         if (obj != null && dynamoDBAttributes != null) {
             Set<String> fieldNames = dynamoDBAttributes.keySet();

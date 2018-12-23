@@ -14,6 +14,10 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig;
 
 /**
  * <h4>
@@ -101,7 +105,7 @@ public class DynamoDBService {
      */
     public DynamoDBMapper getMapper( String tableName ) {
         AmazonDynamoDB client = getClient();
-        DynamoDBMapper mapper = new DynamoDBMapper( client,  new TableNameOverride( tableName ).config() );
+        DynamoDBMapper mapper = new DynamoDBMapper( client,  new DynamoDBMapperConfig.TableNameOverride( tableName ).config() );
         return mapper;
     }
     

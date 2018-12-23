@@ -11,6 +11,8 @@ package io.kunalk.springaws.dynamoDBweb.dynamoDb;
 import java.util.logging.Logger;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.util.TableUtils;
 
 
 /**

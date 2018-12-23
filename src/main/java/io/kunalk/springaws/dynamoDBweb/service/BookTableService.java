@@ -8,7 +8,16 @@
  */
 package io.kunalk.springaws.dynamoDBweb.service;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.model.*;
+import io.kunalk.springaws.dynamoDBweb.dynamoDb.CreateBookTable;
+import io.kunalk.springaws.dynamoDBweb.dynamoDb.DynamoDBUtil;
 import io.kunalk.springaws.dynamoDBweb.dynamoDb.IDynamoDBKeys;
+import io.kunalk.springaws.dynamoDBweb.model.BookInfo;
+import io.kunalk.springaws.dynamoDBweb.model.BookInfoComparator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -99,7 +108,7 @@ public class BookTableService implements IDynamoDBKeys {
     public void writeToBookTable(BookInfo info, String tableName ) {
         if (info != null) {
             DynamoDBMapper mapper = dynamoDBService.getMapper();
-            mapper.save( info, new TableNameOverride( tableName ).config());
+            mapper.save( info, new DynamoDBMapperConfig.TableNameOverride( tableName ).config());
         }
     }
 

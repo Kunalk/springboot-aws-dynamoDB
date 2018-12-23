@@ -10,6 +10,7 @@ package io.kunalk.springaws.dynamoDBweb.controller;
 
 import java.util.List;
 
+import io.kunalk.springaws.dynamoDBweb.model.BookInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;

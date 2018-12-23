@@ -8,6 +8,11 @@
  */
 package io.kunalk.springaws.dynamoDBweb.dynamoDb;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.model.*;
+
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
