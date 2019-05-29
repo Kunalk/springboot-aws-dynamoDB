@@ -11,6 +11,7 @@ This application uses AWS-SDK to connect to Dynamo DB
 		</dependency>
  
 Creates connection with DynamoDB explicitly
+```
  AWSCredentials credentials = getCredentials();
             ClientConfiguration config = new ClientConfiguration();
             config.setProtocol(Protocol.HTTP);
@@ -18,8 +19,10 @@ Creates connection with DynamoDB explicitly
                       .withClientConfiguration(config)
                       .withRegion(getRegion())
                       .build();
+```
                       
 POJO (repository) anotated fro com.amazonaws.services.dynamodbv2.datamodeling.
+```
 @DynamoDBTable(tableName="book_table")
 public class BookInfo {
 
@@ -27,5 +30,6 @@ To operate over data, use mapper which allows to integrate with service
  DynamoDBMapper mapper = dynamoDBService.getMapper();
 E.g.
 mapper.save( info, new DynamoDBMapperConfig.TableNameOverride( tableName ).config());
-List<BookInfo> itemList = dynamoDBService.getMapper(tableName).query(BookInfo.class, queryExpression);        
+List<BookInfo> itemList = dynamoDBService.getMapper(tableName).query(BookInfo.class, queryExpression);       
+```
             
